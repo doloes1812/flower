@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AR Nature Crown - Ultra Magical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<video id="video" autoplay playsinline></video>
+
+<div id="canvas-container">
+    <canvas id="output-canvas"></canvas>
+    <canvas id="bloom-canvas"></canvas>
+    <div id="vignette"></div>
+</div>
+
+<div id="ui-layer">
+    <div id="loading-spinner" class="animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-emerald-400 mb-6 shadow-[0_0_20px_rgba(52,211,153,0.8)]"></div>
+    <h1 id="status-text" class="text-white text-3xl font-bold text-center px-6 glow-text mb-2">Đang kết nối Phép thuật...</h1>
+    <p id="permission-text" class="text-gray-300 text-sm mb-4">(Vui lòng cấp quyền Camera)</p>
+    <div id="instruction-box" class="hidden flex-col items-center">
+        <div class="w-16 h-16 mb-4 border-4 border-emerald-400 rounded-full flex items-center justify-center animate-bounce shadow-[0_0_20px_rgba(52,211,153,0.6)]">
+            <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </div>
+        <p id="sub-text" class="text-emerald-100 text-xl glow-text animate-pulse text-center font-medium px-4">
+            Giơ ngón trỏ lên và giữ im 2.5 giây<br>để gieo mầm sự sống!
+        </p>
+    </div>
+</div>
+
+<!-- Load Scripts in Order -->
+<script src="js/config.js"></script>
+<script src="js/classes/Entities.js"></script>
+<script src="js/classes/GrowingTip.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
